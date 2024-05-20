@@ -1,0 +1,223 @@
+Introduction to NumPy
+What is NumPy?
+NumPy is an open-source library for numerical computing in Python. It provides:
+
+A powerful N-dimensional array object
+Sophisticated (broadcasting) functions
+Tools for integrating C/C++ and Fortran code
+Useful linear algebra, Fourier transform, and random number capabilities
+Installation
+You can install NumPy using pip:
+
+sh
+Copy code
+pip install numpy
+Importing NumPy
+To use NumPy, you typically import it as follows:
+
+python
+Copy code
+import numpy as np
+Core Concepts
+Arrays
+The central feature of NumPy is the ndarray object, an N-dimensional array type.
+
+Creating Arrays
+python
+Copy code
+import numpy as np
+
+# Creating a 1D array
+a = np.array([1, 2, 3, 4, 5])
+
+# Creating a 2D array
+b = np.array([[1, 2, 3], [4, 5, 6]])
+
+# Creating a 3D array
+c = np.array([[[1, 2], [3, 4]], [[5, 6], [7, 8]]])
+Array Attributes
+ndim: Number of dimensions
+shape: Tuple of array dimensions
+size: Number of elements in the array
+dtype: Data type of the array elements
+itemsize: Size of each element in bytes
+python
+Copy code
+print(a.ndim)       # 1
+print(b.shape)      # (2, 3)
+print(c.size)       # 8
+print(a.dtype)      # dtype('int64')
+print(a.itemsize)   # 8
+Array Creation Functions
+NumPy provides several functions to create arrays:
+
+np.zeros(shape): Creates an array filled with zeros
+np.ones(shape): Creates an array filled with ones
+np.full(shape, fill_value): Creates an array filled with a specified value
+np.eye(N): Creates an identity matrix
+np.linspace(start, stop, num): Creates an array with linearly spaced elements
+np.arange(start, stop, step): Creates an array with evenly spaced values within a given range
+python
+Copy code
+zeros = np.zeros((2, 3))
+ones = np.ones((2, 3))
+full = np.full((2, 3), 7)
+eye = np.eye(3)
+linspace = np.linspace(0, 10, 5)
+arange = np.arange(0, 10, 2)
+Array Operations
+Element-wise Operations
+NumPy allows element-wise operations on arrays.
+
+python
+Copy code
+a = np.array([1, 2, 3])
+b = np.array([4, 5, 6])
+
+# Element-wise addition
+c = a + b
+
+# Element-wise subtraction
+d = a - b
+
+# Element-wise multiplication
+e = a * b
+
+# Element-wise division
+f = a / b
+Broadcasting
+Broadcasting allows NumPy to perform element-wise operations on arrays of different shapes.
+
+python
+Copy code
+a = np.array([1, 2, 3])
+b = np.array([[1], [2], [3]])
+
+c = a + b
+Universal Functions (ufuncs)
+NumPy provides a range of mathematical functions that operate element-wise.
+
+python
+Copy code
+a = np.array([1, 2, 3])
+
+# Square root
+sqrt_a = np.sqrt(a)
+
+# Exponential
+exp_a = np.exp(a)
+
+# Sine
+sin_a = np.sin(a)
+
+# Logarithm
+log_a = np.log(a)
+Advanced Features
+Slicing and Indexing
+NumPy arrays can be sliced and indexed in various ways.
+
+python
+Copy code
+a = np.array([1, 2, 3, 4, 5])
+
+# Slicing
+sliced = a[1:4]
+
+# Indexing
+indexed = a[2]
+
+# Boolean indexing
+bool_idx = a[a > 2]
+Reshaping Arrays
+Arrays can be reshaped without changing their data.
+
+python
+Copy code
+a = np.array([[1, 2, 3], [4, 5, 6]])
+
+# Reshape
+reshaped = a.reshape((3, 2))
+
+# Flatten
+flattened = a.flatten()
+Stacking Arrays
+NumPy provides several functions for stacking arrays.
+
+python
+Copy code
+a = np.array([1, 2, 3])
+b = np.array([4, 5, 6])
+
+# Vertical stack
+vstacked = np.vstack((a, b))
+
+# Horizontal stack
+hstacked = np.hstack((a, b))
+Splitting Arrays
+Arrays can be split into multiple arrays.
+
+python
+Copy code
+a = np.array([[1, 2, 3], [4, 5, 6]])
+
+# Split into 2 arrays
+split = np.split(a, 2)
+Linear Algebra
+NumPy offers various linear algebra operations.
+
+python
+Copy code
+a = np.array([[1, 2], [3, 4]])
+
+# Matrix multiplication
+b = np.dot(a, a)
+
+# Transpose
+transpose = np.transpose(a)
+
+# Inverse
+inverse = np.linalg.inv(a)
+
+# Determinant
+det = np.linalg.det(a)
+Random Numbers
+NumPy's random module provides functions for generating random numbers.
+
+python
+Copy code
+# Random float in [0.0, 1.0)
+rand = np.random.rand(3, 2)
+
+# Random integers
+randint = np.random.randint(1, 10, size=(3, 3))
+
+# Normal distribution
+normal = np.random.normal(0, 1, size=(3, 3))
+File I/O
+NumPy can read and write array data from/to files.
+
+python
+Copy code
+a = np.array([1, 2, 3, 4, 5])
+
+# Save to a file
+np.save('array.npy', a)
+
+# Load from a file
+loaded_a = np.load('array.npy')
+Broadcasting Rules
+Broadcasting follows specific rules to make array operations possible.
+
+If arrays differ in their number of dimensions, the shape of the one with fewer dimensions is padded with ones on its leading (left) side.
+If the shape of the two arrays doesn't match, NumPy compares the dimensions element-wise. It starts with the trailing dimensions and works its way forward. Two dimensions are compatible when they are equal, or one of them is 1.
+Structured Arrays
+Structured arrays allow for storing heterogeneous data types.
+
+python
+Copy code
+data = np.array([(1, 'A'), (2, 'B')], dtype=[('x', 'i4'), ('y', 'U1')])
+
+print(data['x'])  # array([1, 2])
+print(data['y'])  # array(['A', 'B'])
+Conclusion
+NumPy is a comprehensive library for numerical computing in Python, offering a wide range of functionalities from basic array operations to advanced linear algebra and random number generation. Its efficient array processing capabilities make it a cornerstone for data analysis, machine learning, and scientific computing. For more detailed information, refer to the official NumPy documentation.
