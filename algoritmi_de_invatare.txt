@@ -1,0 +1,24 @@
+linear regression
+SVM
+Naive Bayes
+logistic regression
+KNN
+decision tree
+random forest
+Gradient Boosting (trees)
+K-Means
+DBSCAN
+PCA
+
+Some popular groups of models provided by scikit-learn include:
+
+Clustering: for grouping unlabeled data such as KMeans.
+Cross Validation: for estimating the performance of supervised models on unseen data.
+Datasets: for test datasets and for generating datasets with specific properties for investigating model behavior.
+Dimensionality Reduction: for reducing the number of attributes in data for summarization, visualization and feature selection such as Principal component analysis.
+Ensemble methods: for combining the predictions of multiple supervised models.
+Feature extraction: for defining attributes in image and text data.
+Feature selection: for identifying meaningful attributes from which to create supervised models.
+Parameter Tuning: for getting the most out of supervised models.
+Manifold Learning: For summarizing and depicting complex multi-dimensional data.
+Supervised Models: a vast array not limited to generalized linear models, discriminate analysis, naive bayes, lazy methods, neural networks, support vector machines and decision trees.

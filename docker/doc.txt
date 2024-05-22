@@ -1,0 +1,26 @@
+Running a Docker Container
+docker run hello-world
+
+Listing Docker Containers
+docker ps
+
+To see all containers (running and stopped):
+docker ps -a
+
+Pulling a Docker Image
+docker pull ubuntu
+
+Running a Command in a Container
+docker run -it ubuntu /bin/bash
+
+Stopping a Docker Container
+docker stop <container_id>
+
+Using Docker Compose
+Docker Compose is a tool for defining and running 
+multi-container Docker applications. With Compose, 
+you use a YAML file to configure your application’s 
+services. Then, with a single command, you create 
+and start all the services from your configuration.
+
+docker-compose up
