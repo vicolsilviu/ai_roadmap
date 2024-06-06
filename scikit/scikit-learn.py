@@ -26,8 +26,8 @@ iris = load_iris()
 # print(iris.target_names)
 # print(iris.feature_names)
 
-X=iris.data
-y=iris.target
+# X=iris.data
+# y=iris.target
 
 # # print(X)
 # # print(y)
@@ -38,5 +38,6 @@ y=iris.target
 
 # print(knn.predict([[3, 5, 4, 2],[5, 4, 3, 2]]))
 
-logreg = LogisticRegression()
-logreg.fit(X,y)
+# logreg = LogisticRegression()
+# logreg.fit(X,y)
+
